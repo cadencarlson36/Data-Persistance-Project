@@ -17,6 +17,9 @@ public class MainManager : MonoBehaviour
     private int m_Points;
     
     private bool m_GameOver = false;
+    //new
+    public Text HighscoreText;
+    private int HighScore = 0;
 
     
     // Start is called before the first frame update
@@ -72,5 +75,14 @@ public class MainManager : MonoBehaviour
     {
         m_GameOver = true;
         GameOverText.SetActive(true);
+        //new
+        if (m_Points > HighScore)
+        {
+            HighScore = m_Points;
+        }
+        //save name in menu scene
+        //HighscoreText.text = $"Best Score : {(load name)} : {HighScore}";
+        //save highscore
+        //then go back to menu scene and load highscore there
     }
 }
